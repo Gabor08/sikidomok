@@ -1,6 +1,8 @@
 #Síkidomok v0.1
 from tkinter import *
-
+def negyzetszamitas():
+    negyzetabl=Toplevel(foablak)
+    negyzetabl.mainloop()
 foablak = Tk()
 foablak.title("Síkidomok")
 foablak.geometry("1024x768")
@@ -20,7 +22,7 @@ menusor.pack(side=TOP, fill=X)
 menu1=Menubutton(menusor, text='Négyzet', underline=0)
 menu1.pack(side=LEFT)
 Szam1=Menu(menu1)
-Szam1.add_command(label='Számítás', command='',  underline=0)
+Szam1.add_command(label='Számítás', command=negyzetszamitas,  underline=0)
 menu1.config(menu=Szam1)
 menu2=Menubutton(menusor, text='Téglalap', underline=0)
 menu2.pack(side=LEFT)
@@ -57,5 +59,4 @@ menu8.pack(side=LEFT)
 Szam8=Menu(menu8)
 Szam8.add_command(label='Számítás', command='',  underline=0)
 menu8.config(menu=Szam8)
-
 foablak.mainloop()
