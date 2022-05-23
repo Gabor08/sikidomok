@@ -1,6 +1,16 @@
 #Síkidomok v0.1
 from tkinter import *
-
+def negyzetszamitas():
+    negyzetabl=Toplevel(foablak)
+    mezo1=Entry(negyzetabl)
+    mezo1.pack()
+    gomb=Button(negyzetabl, text="Kiszámít")
+    gomb.pack()
+    mezo2=Entry(negyzetabl)
+    mezo2.pack()
+    mezo3=Entry(negyzetabl)
+    mezo3.pack()
+    negyzetabl.mainloop()
 foablak = Tk()
 foablak.title("Síkidomok")
 foablak.geometry("1024x768")
@@ -36,7 +46,18 @@ menusor.pack(side=TOP, fill=X)
 menu1=Menubutton(menusor, text='Négyzet', underline=0)
 menu1.pack(side=LEFT)
 Szam1=Menu(menu1)
+
+SIK-53
+Szam1.add_command(label='Számítás', command=negyzetszamitas,  underline=0)
+
+
 Szam1.add_command(label='Számítás', command=, underline=0)
+main
+
+
+
+
+
 menu1.config(menu=Szam1)
 menu2=Menubutton(menusor, text='Téglalap', underline=0)
 menu2.pack(side=LEFT)
@@ -73,6 +94,8 @@ menu8.pack(side=LEFT)
 Szam8=Menu(menu8)
 Szam8.add_command(label='Számítás', command=, underline=0)
 menu8.config(menu=Szam8)
+SIK-53
+=======
 
 # def vonalatrajzol():
 #     x1 =eval(m1.get())
@@ -143,4 +166,5 @@ menu8.config(menu=Szam8)
 # vaszon =Canvas(foablak,bg='dark grey',height=400,width=400)
 # vaszon.pack(side=LEFT)
 
+main
 foablak.mainloop()
