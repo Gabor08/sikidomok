@@ -2,6 +2,14 @@
 from tkinter import *
 def negyzetszamitas():
     negyzetabl=Toplevel(foablak)
+    mezo1=Entry(negyzetabl)
+    mezo1.pack()
+    gomb=Button(negyzetabl, text="Kiszámít")
+    gomb.pack()
+    mezo2=Entry(negyzetabl)
+    mezo2.pack()
+    mezo3=Entry(negyzetabl)
+    mezo3.pack()
     negyzetabl.mainloop()
 foablak = Tk()
 foablak.title("Síkidomok")
