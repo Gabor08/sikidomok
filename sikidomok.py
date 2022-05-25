@@ -89,6 +89,20 @@ def negyzetszamitas():
     gomb2.pack()
     negyzetabl.mainloop()
 
+
+def Kerulet():
+    mezo3.delete(0,END)
+    a=eval(mezo1.get())
+    b=eval(mezo2.get())
+    Kerület=2*(a+b)
+    mezo3.insert(0,str(Kerület))
+def Terulet():
+    mezo4.delete(0,END)
+    a=eval(mezo1.get())
+    b=eval(mezo2.get())
+    Terület=a*b
+    mezo4.insert(0,str(Terület))
+
 #főablak
 foablak = Tk()
 foablak.title("Síkidomok")
