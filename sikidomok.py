@@ -90,6 +90,7 @@ def negyzetszamitas():
     negyzetabl.mainloop()
 
 
+SIK-35
 def teglalap():
     def vonalatrajzol():
         x1 =eval(m1.get())
@@ -169,6 +170,21 @@ def teglalap():
     gomb3.pack()
     teglalapabl.mainloop()
 
+def Kerulet():
+    mezo3.delete(0,END)
+    a=eval(mezo1.get())
+    b=eval(mezo2.get())
+    Kerület=2*(a+b)
+    mezo3.insert(0,str(Kerület))
+def Terulet():
+    mezo4.delete(0,END)
+    a=eval(mezo1.get())
+    b=eval(mezo2.get())
+    Terület=a*b
+    mezo4.insert(0,str(Terület))
+    
+main
+
 #főablak
 foablak = Tk()
 foablak.title("Síkidomok")
@@ -179,7 +195,7 @@ kep_szelesseg = foablak.winfo_screenwidth()
 kep_magassag = foablak.winfo_screenheight()
 center_x = int(kep_szelesseg/2 - abl_szelesseg / 2)
 center_y = int(kep_magassag/2 - abl_magassag / 2)
-foablak.resizable(False, False)
+foablak.resizable(True, True)
 foablak.iconphoto(True, PhotoImage(file='./kellekek/negyzetikon.png'))
 filename = PhotoImage(file = "./kellekek/MPP+LOGO-12.png")
 background_label = Label(foablak, image=filename)
@@ -196,37 +212,57 @@ menu1.config(menu=Szam1)
 menu2=Menubutton(menusor, text='Téglalap', underline=0)
 menu2.pack(side=LEFT)
 Szam2=Menu(menu2)
+
+SIK-35
 Szam2.add_command(label='Számítás', command=teglalap, underline=0)
+
+Szam2.add_command(label='Számítás',
+                #   command=teglalapszamitas,
+                  underline=0)
+main
 menu2.config(menu=Szam2)
 menu3=Menubutton(menusor, text='Háromszög', underline=0)
 menu3.pack(side=LEFT)
 Szam3=Menu(menu3)
-Szam3.add_command(label='Számítás', underline=0)
+Szam3.add_command(label='Számítás',
+                #   command=haromszogszamitas,
+                  underline=0)
 menu3.config(menu=Szam3)
 menu4=Menubutton(menusor, text='Trapéz', underline=0)
 menu4.pack(side=LEFT)
 Szam4=Menu(menu4)
-Szam4.add_command(label='Számítás', underline=0)
+Szam4.add_command(label='Számítás',
+                #   command=trapezszamitas,
+                  underline=0)
 menu4.config(menu=Szam4)
 menu5=Menubutton(menusor, text='Paralelogramma', underline=0)
 menu5.pack(side=LEFT)
 Szam5=Menu(menu5)
-Szam5.add_command(label='Számítás', underline=0)
+Szam5.add_command(label='Számítás',
+                #   command=paralelogrammaszamitas,
+                  underline=0)
 menu5.config(menu=Szam5)
 menu6=Menubutton(menusor, text='Deltoid', underline=0)
 menu6.pack(side=LEFT)
 Szam6=Menu(menu6)
-Szam6.add_command(label='Számítás', underline=0)
+Szam6.add_command(label='Számítás',
+                #   command=deltoidszamitas,
+                  underline=0)
 menu6.config(menu=Szam6)
 menu7=Menubutton(menusor, text='Rombusz', underline=0)
 menu7.pack(side=LEFT)
 Szam7=Menu(menu7)
-Szam7.add_command(label='Számítás', underline=0)
+Szam7.add_command(label='Számítás',
+                #   command=rombuszszamitas,
+                  underline=0)
 menu7.config(menu=Szam7)
 menu8=Menubutton(menusor, text='Kör', underline=0)
 menu8.pack(side=LEFT)
 Szam8=Menu(menu8)
-Szam8.add_command(label='Számítás', underline=0)
+Szam8.add_command(label='Számítás',
+                  #command=korszamitas,    
+                  underline=0)
 menu8.config(menu=Szam8)
+
 
 foablak.mainloop()
