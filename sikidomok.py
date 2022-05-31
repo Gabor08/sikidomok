@@ -1,5 +1,6 @@
 #Síkidomok v0.1
 from tkinter import *
+from turtle import right
 def negyzetszamitas():
     def Kerulet():
         mezo2.delete(0,END)
@@ -21,6 +22,8 @@ def negyzetszamitas():
         color2 =col2.get()
         can1.create_rectangle(x1,y1,x2,y2,width=vast,fill=color,outline=color2)
     negyzetabl=Toplevel(foablak)
+    felirat1 = Label(negyzetabl,text="a oldal hossza:")
+    felirat1.pack(side=LEFT)
     mezo1=Entry(negyzetabl)
     mezo1.pack()
     gomb1=Button(negyzetabl, text="Kiszámít (kerület)", command=Kerulet)
@@ -90,8 +93,20 @@ def negyzetszamitas():
     negyzetabl.mainloop()
 
 
-SIK-35
+
 def teglalap():
+    def Kerulet():
+        mezo3.delete(0,END)
+        a=eval(mezo1.get())
+        b=eval(mezo2.get())
+        Kerület=2*(a+b)
+        mezo3.insert(0,str(Kerület))
+    def Terulet():
+        mezo4.delete(0,END)
+        a=eval(mezo1.get())
+        b=eval(mezo2.get())
+        Terület=a*b
+        mezo4.insert(0,str(Terület))
     def vonalatrajzol():
         x1 =eval(m1.get())
         y1 =eval(m2.get())
@@ -102,16 +117,22 @@ def teglalap():
         color2 =col2.get()
         can1.create_rectangle(x1,y1,x2,y2,width=vast,fill=color,outline=color2)
     teglalapabl=Toplevel(foablak)
+    felirat1 = Label(teglalapabl,text="a oldal hossza:")
+    felirat1.pack()
+    felirat2 = Label(teglalapabl,text="b oldal hossza:")
+    felirat2.pack()
     mezo1=Entry(teglalapabl)
     mezo1.pack()
-    gomb1=Button(teglalapabl, text="Kiszámít (kerület)")
-    gomb1.pack()
-    gomb2=Button(teglalapabl, text="Kiszámít (terület)")
-    gomb2.pack()
     mezo2=Entry(teglalapabl)
     mezo2.pack()
+    gomb1=Button(teglalapabl, text="Kiszámít (kerület)",command=Kerulet)
+    gomb1.pack()
+    gomb2=Button(teglalapabl, text="Kiszámít (terület)",command=Terulet)
+    gomb2.pack()
     mezo3=Entry(teglalapabl)
     mezo3.pack()
+    mezo4=Entry(teglalapabl)
+    mezo4.pack()
     can1 = Canvas(teglalapabl,bg='dark grey',height=400,width=400)
     can1.pack(side=RIGHT)
     gomb4 =Button(teglalapabl,text='Kilép',command=teglalapabl.destroy)
@@ -170,20 +191,9 @@ def teglalap():
     gomb3.pack()
     teglalapabl.mainloop()
 
-def Kerulet():
-    mezo3.delete(0,END)
-    a=eval(mezo1.get())
-    b=eval(mezo2.get())
-    Kerület=2*(a+b)
-    mezo3.insert(0,str(Kerület))
-def Terulet():
-    mezo4.delete(0,END)
-    a=eval(mezo1.get())
-    b=eval(mezo2.get())
-    Terület=a*b
-    mezo4.insert(0,str(Terület))
+
     
-main
+
 
 #főablak
 foablak = Tk()
@@ -196,10 +206,10 @@ kep_magassag = foablak.winfo_screenheight()
 center_x = int(kep_szelesseg/2 - abl_szelesseg / 2)
 center_y = int(kep_magassag/2 - abl_magassag / 2)
 foablak.resizable(True, True)
-foablak.iconphoto(True, PhotoImage(file='./kellekek/negyzetikon.png'))
-filename = PhotoImage(file = "./kellekek/MPP+LOGO-12.png")
-background_label = Label(foablak, image=filename)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)  
+# foablak.iconphoto(True, PhotoImage(file='./kellekek/negyzetikon.png'))
+# filename = PhotoImage(file = "./kellekek/MPP+LOGO-12.png")
+# background_label = Label(foablak, image=filename)
+# background_label.place(x=0, y=0, relwidth=1, relheight=1)  
 
 #menü
 menusor=Frame(foablak)
@@ -213,13 +223,11 @@ menu2=Menubutton(menusor, text='Téglalap', underline=0)
 menu2.pack(side=LEFT)
 Szam2=Menu(menu2)
 
-SIK-35
+
 Szam2.add_command(label='Számítás', command=teglalap, underline=0)
 
-Szam2.add_command(label='Számítás',
-                #   command=teglalapszamitas,
-                  underline=0)
-main
+
+
 menu2.config(menu=Szam2)
 menu3=Menubutton(menusor, text='Háromszög', underline=0)
 menu3.pack(side=LEFT)
