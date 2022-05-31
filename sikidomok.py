@@ -192,8 +192,14 @@ def teglalap():
     teglalapabl.mainloop()
 
 
+def haromszogszamitas():
     
-
+    haromszogabl=Toplevel(foablak)
+    can3 = Canvas(haromszogabl,bg='dark grey',height=400,width=400)
+    can3.pack(side=RIGHT)
+    gomb1 =Button(haromszogabl,text='Kilép',command=haromszogabl.destroy)
+    gomb1.pack(side=BOTTOM)
+    haromszogabl.mainloop()
 
 #főablak
 foablak = Tk()
@@ -233,7 +239,7 @@ menu3=Menubutton(menusor, text='Háromszög', underline=0)
 menu3.pack(side=LEFT)
 Szam3=Menu(menu3)
 Szam3.add_command(label='Számítás',
-                #   command=haromszogszamitas,
+                  command=haromszogszamitas,
                   underline=0)
 menu3.config(menu=Szam3)
 menu4=Menubutton(menusor, text='Trapéz', underline=0)
