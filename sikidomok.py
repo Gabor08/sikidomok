@@ -193,6 +193,19 @@ def teglalap():
 
 
 def haromszogszamitas():
+    def Kerulet():
+        mezo5.delete(0,END)
+        a=eval(mezo1.get())
+        b=eval(mezo2.get())
+        c=eval(mezo3.get())
+        Kerület=a+b+c
+        mezo5.insert((0,str(Kerület)))
+    def Terulet():
+        mezo6.delete(0,END)
+        a=eval(mezo1.get())
+        ma=eval(mezo4.get())
+        Terület=(a*ma)/2 
+        mezo6.insert(0,str(Terület))
     def vonalatrajzol():
         x1 =eval(m1.get())
         y1 =eval(m2.get())
@@ -219,20 +232,18 @@ def haromszogszamitas():
     felirat4.pack()
     mezo4=Entry(haromszogabl)
     mezo4.pack()
-
     gomb1=Button(haromszogabl, text="Kiszámít (kerület)")
     gomb1.pack()
     gomb2=Button(haromszogabl, text="Kiszámít (terület)")
     gomb2.pack()
     felirat5 = Label(haromszogabl,text="Terület:")
     felirat5.pack()
-    mezo3=Entry(haromszogabl)
-    mezo3.pack()
+    mezo5=Entry(haromszogabl)
+    mezo5.pack()
     felirat6 = Label(haromszogabl,text="Kerület:")
     felirat6.pack()
-    mezo4=Entry(haromszogabl)
-    mezo4.pack()
-
+    mezo6=Entry(haromszogabl)
+    mezo6.pack()
     szov1 =Label(haromszogabl,text ='Kitöltési szín:')
     szov1.pack()
     col =StringVar()
@@ -291,20 +302,6 @@ def haromszogszamitas():
     gomb1 =Button(haromszogabl,text='Kilép',command=haromszogabl.destroy)
     gomb1.pack(side=BOTTOM)
     haromszogabl.mainloop()
-
-def Kerulet():
-    mezo3.delete(0,END)
-    a=eval(mezo1.get())
-    b=eval(mezo2.get())
-    c=eval(mezo3.get())
-    Kerület=a+b+c
-    mezo3.insert((0,str(Kerület)))
-def Terulet():
-    mezo5.delete(0,END)
-    a=eval(mezo1.get())
-    ma=eval(mezo4.get())
-    Terület=(a*ma)/2 
-    mezo5.insert(0,str(Terület))
 
 #főablak
 foablak = Tk()
