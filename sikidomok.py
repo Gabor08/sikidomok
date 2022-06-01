@@ -201,6 +201,20 @@ def haromszogszamitas():
     gomb1.pack(side=BOTTOM)
     haromszogabl.mainloop()
 
+def Kerulet():
+    mezo3.delete(0,END)
+    a=eval(mezo1.get())
+    b=eval(mezo2.get())
+    c=eval(mezo3.get())
+    Kerület=a+b+c
+    mezo3.insert((0,str(Kerület)))
+def Terulet():
+    mezo5.delete(0,END)
+    a=eval(mezo1.get())
+    ma=eval(mezo4.get())
+    Terület=(a*ma)/2 
+    mezo5.insert(0,str(Terület))
+
 #főablak
 foablak = Tk()
 foablak.title("Síkidomok")
